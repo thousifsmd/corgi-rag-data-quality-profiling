@@ -1,6 +1,6 @@
-# CORGI — Data Profiling and Data Quality-Gating the RAG Corpus
+# CORGI: Data-Quality Profiling and Gating for Retrieval-Augmented Generation Corpora
 
-Reference implementation and benchmark for **CORGI**, a system that profiles a
+Reference implementation and benchmark for **CORGI** (CORpus + the gate/inspector), a system that profiles a
 retrieval-augmented generation (RAG) corpus with computable data-quality metrics and
 **gates** defective or redundant content before it is indexed.
 
