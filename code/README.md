@@ -56,9 +56,6 @@ python -I corgi_gate.py    --data ../data/beir/scifact --out ../out --model sent
 
 Chunks are **sentence-aligned** (whole sentences packed to ~`--chunk-size` words).
 
-> **Paper-build tooling** (`word_convert.py`, `word_fill.py`, `verify_refs.py`) is separate from the
-> research code and documented in [`README_ieee_template_builder.md`](README_ieee_template_builder.md).
-> It is Windows + MS Word only and not needed to run any experiment.
 
 ## Reproducibility notes
 - Deterministic: `--seed` (default 0), KMeans `random_state=0`.
