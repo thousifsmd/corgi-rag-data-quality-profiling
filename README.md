@@ -52,7 +52,17 @@ Python 3.10+ (tested on 3.14), see `code/requirements.txt`. No GPU required.
 - The IEEE Word template is **not** included (supply your own from your venue).
 
 ## License
-TODO — add a license (MIT or Apache-2.0 recommended) before publishing.
+MIT — see [`LICENSE`](LICENSE).
 
 ## Citation
-TODO — add the paper citation / Zenodo DOI once available.
+If you use CORGI or the benchmark, please cite:
+
+```bibtex
+@misc{shaik2026corgi,
+  author = {Shaik, Mohammed Thousif},
+  title  = {{CORGI}: Profiling and Quality-Gating the Retrieval-Augmented Generation Corpus},
+  year   = {2026},
+  howpublished = {\url{https://github.com/thousifsmd/corgi-rag-data-quality}}
+}
+```
+(Update with the venue and/or Zenodo DOI once available.)
