@@ -49,7 +49,6 @@ Python 3.10+ (tested on 3.14), see `code/requirements.txt`. No GPU required.
 ## Data sources & licensing
 - **SEC EDGAR** 10-K filings — public domain (U.S. government); fetched live, not redistributed here.
 - **BEIR / SciFact** — downloaded from the BEIR distribution; see BEIR's license.
-- The IEEE Word template is **not** included (supply your own from your venue).
 
 ## License
 MIT — see [`LICENSE`](LICENSE).
@@ -65,4 +64,4 @@ If you use CORGI or the benchmark, please cite:
   howpublished = {\url{https://github.com/thousifsmd/corgi-rag-data-quality}}
 }
 ```
-(Update with the venue and/or Zenodo DOI once available.)
+
