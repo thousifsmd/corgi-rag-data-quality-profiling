@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "n_clean": 5183,
+    "near_dups": 2073,
+    "thin": 777,
+    "tau": 0.95,
+    "min_tokens": 20,
+    "model": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "results": {
+    "none": {
+      "ndcg@10": 0.5664,
+      "dup_occ@10": 0.251,
+      "index_size": 8033,
+      "thin_retained": 777
+    },
+    "thin-only": {
+      "ndcg@10": 0.5834,
+      "dup_occ@10": 0.2883,
+      "index_size": 7256,
+      "thin_retained": 0
+    },
+    "redundancy-only": {
+      "ndcg@10": 0.6206,
+      "dup_occ@10": 0.0033,
+      "index_size": 5987,
+      "thin_retained": 776
+    },
+    "full": {
+      "ndcg@10": 0.6446,
+      "dup_occ@10": 0.004,
+      "index_size": 5211,
+      "thin_retained": 0
+    }
+  }
+}

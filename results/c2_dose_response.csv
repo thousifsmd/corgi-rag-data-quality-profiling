@@ -1,0 +1,13 @@
+defect,dose,ndcg@10,recall@10,dup_occupancy@10
+truncate,0.0,0.6451,0.7833,
+truncate,0.1,0.6551,0.7832,
+truncate,0.2,0.6418,0.7716,
+truncate,0.3,0.6264,0.7544,
+truncate,0.4,0.6233,0.7553,
+truncate,0.5,0.6145,0.7453,
+duplicate,0.0,0.6451,0.7833,0.0
+duplicate,0.1,0.6333,0.7733,0.09
+duplicate,0.2,0.6148,0.7727,0.1627
+duplicate,0.3,0.5918,0.7693,0.2227
+duplicate,0.4,0.5775,0.756,0.2847
+duplicate,0.5,0.5641,0.7552,0.3327

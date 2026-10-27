@@ -1,0 +1,23 @@
+# Regenerable data & caches (scripts recreate these)
+data/
+out/
+*.npy
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Logs & temp
+*.log
+~$*
+
+# Binaries / licensing / author identity
+*.doc
+paper/*.docx
+paper/*Copy*
+
+# OS
+.DS_Store
+Thumbs.db

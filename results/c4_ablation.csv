@@ -1,0 +1,5 @@
+config,ndcg@10,dup_occ@10,index_size,thin_retained
+none,0.5664,0.251,8033,777
+thin-only,0.5834,0.2883,7256,0
+redundancy-only,0.6206,0.0033,5987,776
+full,0.6446,0.004,5211,0

@@ -1,0 +1,9 @@
+# CORGI reference implementation — dependencies
+# Install:  python -m pip install -r requirements.txt
+sentence-transformers>=2.2.0
+scikit-learn>=1.3.0
+numpy>=1.24.0
+pandas>=2.0.0
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0

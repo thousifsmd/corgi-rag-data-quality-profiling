@@ -1,0 +1,50 @@
+{
+  "corpus": {
+    "n_docs": 50,
+    "n_chunks": 22063,
+    "docs_with_date": 50,
+    "doc_date_completeness": 1.0,
+    "chunk_size": 200,
+    "overlap": 40,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "ref_date": "2026-10-27"
+  },
+  "completeness": {
+    "thin_chunk_ratio": 0.0133,
+    "thin_chunks": 294
+  },
+  "validity": {
+    "bad_boundary_ratio": 0.1007,
+    "bad_boundary_chunks": 2222
+  },
+  "uniqueness_exact": {
+    "exact_dup_ratio": 0.0612,
+    "exact_dup_chunks": 1350,
+    "unique_chunks": 20713
+  },
+  "uniqueness_semantic": {
+    "redundancy_ratio": 0.5713,
+    "near_dup_chunks": 12604,
+    "mean_nn_sim": 0.9379
+  },
+  "redundancy_sweep": {
+    "0.85": 0.8736,
+    "0.90": 0.7543,
+    "0.93": 0.6517,
+    "0.95": 0.5713,
+    "0.97": 0.4742,
+    "0.99": 0.3249
+  },
+  "timeliness": {
+    "dated_chunk_ratio": 1.0,
+    "mean_age_years": 2.68,
+    "max_age_years": 4.73,
+    "stale_ratio": 0.398
+  },
+  "coverage": {
+    "coverage_balance": 0.9737,
+    "n_topics": 20,
+    "largest_topic_share": 0.1195,
+    "empty_or_tiny_topics": 0
+  }
+}

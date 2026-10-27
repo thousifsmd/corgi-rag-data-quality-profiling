@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "n_clean": 5183,
+    "injected": 2073,
+    "contaminate": 0.4,
+    "tau": 0.95,
+    "drop_last_frac": 0.15
+  },
+  "results": {
+    "clean": {
+      "ndcg@10": 0.6451,
+      "recall@10": 0.7833,
+      "dup_occ@10": 0.0,
+      "tokens@10": 2149.7,
+      "index_size": 5183
+    },
+    "ungated": {
+      "ndcg@10": 0.5834,
+      "recall@10": 0.7549,
+      "dup_occ@10": 0.2883,
+      "tokens@10": 2064.2,
+      "index_size": 7256
+    },
+    "exact-dedup": {
+      "ndcg@10": 0.5834,
+      "recall@10": 0.7549,
+      "dup_occ@10": 0.2883,
+      "tokens@10": 2064.2,
+      "index_size": 7256,
+      "removed": 0
+    },
+    "CORGI-gated": {
+      "ndcg@10": 0.6446,
+      "recall@10": 0.7833,
+      "dup_occ@10": 0.004,
+      "tokens@10": 2144.4,
+      "index_size": 5211,
+      "removed": 2045,
+      "removed_near_dup": 2045
+    }
+  }
+}
