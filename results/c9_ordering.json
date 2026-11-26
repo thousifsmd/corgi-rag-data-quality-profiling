@@ -1,0 +1,65 @@
+{
+  "tau": 0.95,
+  "theta": 20,
+  "valid_chunks": 19698,
+  "oldest_first": {
+    "quarantined_redundant": 6902,
+    "by_year": {
+      "2022": {
+        "valid": 3909,
+        "quarantined": 90,
+        "frac_quarantined": 0.023
+      },
+      "2023": {
+        "valid": 3959,
+        "quarantined": 1362,
+        "frac_quarantined": 0.344
+      },
+      "2024": {
+        "valid": 3988,
+        "quarantined": 1794,
+        "frac_quarantined": 0.4498
+      },
+      "2025": {
+        "valid": 3957,
+        "quarantined": 1854,
+        "frac_quarantined": 0.4685
+      },
+      "2026": {
+        "valid": 3885,
+        "quarantined": 1802,
+        "frac_quarantined": 0.4638
+      }
+    }
+  },
+  "newest_first": {
+    "quarantined_redundant": 6924,
+    "by_year": {
+      "2022": {
+        "valid": 3909,
+        "quarantined": 1583,
+        "frac_quarantined": 0.405
+      },
+      "2023": {
+        "valid": 3959,
+        "quarantined": 1877,
+        "frac_quarantined": 0.4741
+      },
+      "2024": {
+        "valid": 3988,
+        "quarantined": 1776,
+        "frac_quarantined": 0.4453
+      },
+      "2025": {
+        "valid": 3957,
+        "quarantined": 1612,
+        "frac_quarantined": 0.4074
+      },
+      "2026": {
+        "valid": 3885,
+        "quarantined": 76,
+        "frac_quarantined": 0.0196
+      }
+    }
+  }
+}

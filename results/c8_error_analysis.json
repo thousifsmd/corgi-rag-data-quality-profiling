@@ -1,0 +1,225 @@
+{
+  "N": 22063,
+  "tau": 0.95,
+  "theta": 20,
+  "chunk_size": 200,
+  "overlap": 40,
+  "quarantined": 9267,
+  "frac_quarantined": 0.42,
+  "quarantined_thin_or_bad_boundary": 2365,
+  "quarantined_redundant": 6902,
+  "redundant_pairs": 6902,
+  "relation_breakdown": {
+    "same_doc": {
+      "n": 102,
+      "frac": 0.0148
+    },
+    "same_company_other_year": {
+      "n": 6552,
+      "frac": 0.9493
+    },
+    "other_company": {
+      "n": 248,
+      "frac": 0.0359
+    }
+  },
+  "jaccard_buckets": {
+    ">=0.8 (textual duplicate)": 0.4615,
+    "0.5-0.8": 0.3653,
+    "<0.5 (similar meaning, different text)": 0.1733
+  },
+  "frac_pairs_with_different_numbers": 0.6973,
+  "frac_low_jaccard_and_different_numbers": 0.4761,
+  "examples_correct_removals": [
+    {
+      "quarantined_doc": "COP_10-K_2026-02-17",
+      "keeper_doc": "COP_10-K_2023-02-16",
+      "relation": "same_company_other_year",
+      "cosine": 1.0,
+      "jaccard": 1.0,
+      "numbers_differ": false,
+      "quarantined_text": "Individual assets are grouped for impairment purposes at the lowest level for which there are identifiable cash flows that are largely independent of the cash flows of other groups of assets—generally on a field-by-field basis for E&P assets. Because there usually is a lack of quoted market prices for long-lived assets, the fair value of impaired assets is typically determined based on the present values of expected ",
+      "keeper_text": "Individual assets are grouped for impairment purposes at the lowest level for which there are identifiable cash flows that are largely independent of the cash flows of other groups of assets—generally on a field-by-field basis for E&P assets. Because there usually is a lack of quoted market prices for long-lived assets, the fair value of impaired assets is typically determined based on the present values of expected "
+    },
+    {
+      "quarantined_doc": "KMI_10-K_2026-02-13",
+      "keeper_doc": "KMI_10-K_2023-02-08",
+      "relation": "same_company_other_year",
+      "cosine": 0.995,
+      "jaccard": 0.818,
+      "numbers_differ": false,
+      "quarantined_text": "It does not represent the maximum possible loss or any expected loss that may occur, since actual future gains and losses will differ from those estimated. Actual gains and losses may differ from estimates due to actual fluctuations in market rates, operating exposures and the timing thereof, as well as changes in our portfolio of derivatives during the year. Interest Rate Risk In order to maintain a cost effective c",
+      "keeper_text": "It does not represent the maximum possible loss or any expected loss that may occur, since actual future gains and losses will differ from those estimated. Actual gains and losses may differ from estimates due to actual fluctuations in market rates, operating exposures and the timing thereof, as well as changes in our portfolio of derivatives during the year. Interest Rate Risk In order to maintain a cost effective c"
+    },
+    {
+      "quarantined_doc": "PSX_10-K_2022-02-18",
+      "keeper_doc": "BKR_10-K_2022-02-11",
+      "relation": "other_company",
+      "cosine": 1.0,
+      "jaccard": 1.0,
+      "numbers_differ": false,
+      "quarantined_text": "A company’s internal control over financial reporting includes those policies and procedures that (1) pertain to the maintenance of records that, in reasonable detail, accurately and fairly reflect the transactions and dispositions of the assets of the company; (2) provide reasonable assurance that transactions are recorded as necessary to permit preparation of financial statements in accordance with generally accept",
+      "keeper_text": "A company’s internal control over financial reporting includes those policies and procedures that (1) pertain to the maintenance of records that, in reasonable detail, accurately and fairly reflect the transactions and dispositions of the assets of the company; (2) provide reasonable assurance that transactions are recorded as necessary to permit preparation of financial statements in accordance with generally accept"
+    }
+  ],
+  "examples_same_doc_overlap": [
+    {
+      "quarantined_doc": "BKR_10-K_2025-02-04",
+      "keeper_doc": "BKR_10-K_2025-02-04",
+      "relation": "same_doc",
+      "cosine": 0.983,
+      "jaccard": 0.191,
+      "numbers_differ": true,
+      "quarantined_text": "North America revenue was $4,116 million in 2023, an increase of $352 million from 2022. OFSE segment operating income was $1,746 million in 2023 compared to $1,201 million in 2022. The improved performance in 2023 was primarily driven by higher volume, price and cost-out initiatives, partially offset by inflationary pressure and lower cost productivity. Baker Hughes Company 2024 Form 10-K | 40 Industrial & Energy Te",
+      "keeper_text": "North America revenue was $3,955 million in 2024, a decrease of $161 million from 2023. OFSE segment operating income was $1,988 million in 2024 compared to $1,746 million in 2023. The improved performance in 2024 was a result of higher price, cost-out initiatives, and, to a lesser extent, volume with higher proportionate growth in SSPS, partially offset by inflationary pressure. Baker Hughes Company 2024 Form 10-K |"
+    },
+    {
+      "quarantined_doc": "PSX_10-K_2025-02-21",
+      "keeper_doc": "PSX_10-K_2025-02-21",
+      "relation": "same_doc",
+      "cosine": 1.0,
+      "jaccard": 0.761,
+      "numbers_differ": false,
+      "quarantined_text": "At December 31, 2024 and 2023, $ 550 million and $ 1.25 billion were borrowed under the Term Loan Agreement, which matures in June 2026, respectively. Related Party Advance Term Loan Agreements At December 31, 2023, borrowings outstanding under our Advance Term Loan agreements with WRB totaled $ 290 million. Borrowings under these agreements were due between 2035 and 2038 and bore interest at a floating rate based on",
+      "keeper_text": "At December 31, 2024 and 2023, $550 million and $1.25 billion were borrowed under the Term Loan Agreement, which matures in June 2026, respectively. Related Party Advance Term Loan Agreements At December 31, 2023, borrowings outstanding under our Advance Term Loan agreements with WRB totaled $290 million. Borrowings under these agreements were due between 2035 and 2038 and bore interest at a floating rate based on an"
+    },
+    {
+      "quarantined_doc": "COP_10-K_2022-02-17",
+      "keeper_doc": "COP_10-K_2022-02-17",
+      "relation": "same_doc",
+      "cosine": 0.974,
+      "jaccard": 0.266,
+      "numbers_differ": true,
+      "quarantined_text": "1,205 - - 1,205 Transportation costs - - - - - - - - - Other revenues - - - - - 8 - - 8 Total revenues - - - - - 1,696 - - 1,696 Production costs excluding taxes - - - - - 289 - - 289 Taxes other than income taxes - - - - - 502 - - 502 Exploration expenses - - - - - 20 - - 20 Depreciation, depletion and amortization - - - - - 569 - - 569 Impairments - - - - - - - - - Other related expenses - - - - - (2) - - (2) Accre",
+      "keeper_text": "1,797 - - 1,797 Transportation costs - - - - - - - - - Other revenues - - - - - 5 - - 5 Total revenues - - - - - 2,547 - - 2,547 Production costs excluding taxes - - - - - 329 - - 329 Taxes other than income taxes - - - - - 824 - - 824 Exploration expenses - - - - - 268 - - 268 Depreciation, depletion and amortization - - - - - 593 593 Impairments - - - - - 718 - - 718 Other related expenses - - - - - 3 - - 3 Accreti"
+    }
+  ],
+  "examples_possible_false_positives": [
+    {
+      "quarantined_doc": "BKR_10-K_2024-02-05",
+      "keeper_doc": "BKR_10-K_2022-02-11",
+      "relation": "same_company_other_year",
+      "cosine": 0.979,
+      "jaccard": 0.509,
+      "numbers_differ": true,
+      "quarantined_text": "Third-party investment consultants assist these committees in developing asset allocation strategies to determine our expected rates of return and expected risk for various investment portfolios. The investment committees considered these strategies in the formal establishment of the current asset-mix targets based on the projected risk and return levels for all major asset classes. Baker Hughes Company 2023 Form 10-",
+      "keeper_text": "Third-party investment consultants assist these committees in developing asset allocation strategies to determine our expected rates of return and expected risk for various investment portfolios. The investment committees considered these strategies in the formal establishment of the current asset-mix targets based on the projected risk and return levels for all major asset classes. Baker Hughes Company 2021 Form 10-"
+    },
+    {
+      "quarantined_doc": "KMI_10-K_2026-02-13",
+      "keeper_doc": "KMI_10-K_2022-02-07",
+      "relation": "same_company_other_year",
+      "cosine": 0.984,
+      "jaccard": 0.457,
+      "numbers_differ": true,
+      "quarantined_text": "Yes ☐ No ☑ Aggregate market value of the voting and non-voting common equity held by non-affiliates of the registrant, based on closing prices in the daily composite list for transactions on the New York Stock Exchange on June 30, 2025 was approximately $ 57,054,291,328 . As of February 12, 2026, the registrant had 2,224,806,397 shares of Class P common stock outstanding. DOCUMENTS INCORPORATED BY REFERENCE Portions ",
+      "keeper_text": "Yes ☐ No ☑ Aggregate market value of the voting and non-voting common equity held by non-affiliates of the registrant, based on closing prices in the daily composite list for transactions on the New York Stock Exchange on June 30, 2021 was approximately $ 36,152,128,132 . As of February 4, 2022, the registrant had 2,267,484,557 shares of Class P common stock outstanding. DOCUMENTS INCORPORATED BY REFERENCE Portions o"
+    },
+    {
+      "quarantined_doc": "PSX_10-K_2026-02-20",
+      "keeper_doc": "PSX_10-K_2022-02-18",
+      "relation": "same_company_other_year",
+      "cosine": 0.955,
+      "jaccard": 0.796,
+      "numbers_differ": true,
+      "quarantined_text": "See Note 9—Investments, Loans and Long-Term Receivables for additional information on JET Management Holding. We also sold certain feedstocks and intermediate products to WRB and acted as an agent for WRB in supplying crude oil and other feedstocks for a fee. In addition, we charged several of our equity affiliates, including CPChem, for the use of common facilities, such as steam generators, waste and water treaters",
+      "keeper_text": "We also sold certain feedstocks and intermediate products to WRB and acted as an agent for WRB in supplying crude oil and other feedstocks for a fee. In addition, we charged several of our equity affiliates, including CPChem, for the use of common facilities, such as steam generators, waste and water treaters and warehouse facilities. (b) We purchased crude oil, refined petroleum products, NGL and solvents from WRB. "
+    }
+  ],
+  "examples_thin_or_bad_boundary": [
+    {
+      "doc": "VLO_10-K_2022-02-22",
+      "tokens": 200,
+      "text": "Short-term lease cost 9 45 — 37 — — — 91 Sublease income — ( 10 ) — — — ( 2 ) — ( 12 ) Total lease cost $ 428 $ 231 $ 64 $ 71 $ 14 $ 26 $ 4 $ 838 Year ended December 31, 2019 Finance lease cost: Amortization of ROU assets $ 44 $ — $ — $ 7 $ 3 $ — $ — $ 54 Interest on lease liabilities 47 — — 1 2 — —"
+    },
+    {
+      "doc": "VLO_10-K_2026-02-25",
+      "tokens": 75,
+      "text": "sheet line items: Debt and finance lease obligations, less current portion — 2,104 — 2,134 Other long-term liabilities 665 — 699 — Total lease liabilities $ 1,084 $ 2,358 $ 1,077 $ 2,378 Other supplemental information Weighted-average remaining lease term 5.8 years 13.2 years 6.2 years 13.2 years We"
+    },
+    {
+      "doc": "COP_10-K_2025-02-18",
+      "tokens": 15,
+      "text": "Contents Costs Incurred Year Ended December 31 Millions of Dollars Alaska Lower 48 Total U.S."
+    }
+  ],
+  "admitted_with_near_miss_cos_0.90_to_tau": {
+    "n": 5665,
+    "frac_of_admitted": 0.4427
+  },
+  "examples_slipped_through": [
+    {
+      "doc_a": "COP_10-K_2025-02-18",
+      "doc_b": "COP_10-K_2023-02-16",
+      "cosine": 0.904,
+      "text_a": "At December 31, 2024, we have maintained a valuation allowance with respect to substantially all U.S. foreign tax credit carryforwards, basis differences in our APLNG investment, and certain net operating loss carryforwards for various jurisdictions. During 2024, the valuation allowance movement charged to earnings primarily relates to the ability ",
+      "text_b": "Valuation allowances have been established to reduce deferred tax assets to an amount that will, more likely than not, be realized. At December 31, 2022, we have maintained a valuation allowance with respect to substantially all U.S. foreign tax credit carryforwards, basis differences in our APLNG investment, and certain net operating loss carryfor"
+    },
+    {
+      "doc_a": "OXY_10-K_2025-02-18",
+      "doc_b": "OXY_10-K_2022-02-24",
+      "cosine": 0.948,
+      "text_a": "The declaration of future dividends is a business decision made by the Board of Directors from time to time and will depend on Occidental’s financial condition and other factors deemed relevant by the Board of Directors. SHARE REPURCHASE ACTIVITIES Occidental’s share repurchase activities in 2024, were as follows: Period Total Number of Shares Purc",
+      "text_b": "Occidental’s current annualized dividend rate is $0.04 per share. The declaration of future dividends is a business decision made by the Board of Directors from time to time and will depend on Occidental’s financial condition and other factors deemed relevant by the Board of Directors. SHARE REPURCHASE ACTIVITIES Occidental’s share repurchase activ"
+    },
+    {
+      "doc_a": "VLO_10-K_2024-02-22",
+      "doc_b": "VLO_10-K_2025-02-26",
+      "cosine": 0.934,
+      "text_a": "(b) The average price paid per share reported in this column excludes brokerage commissions and a one percent excise tax on share purchases. (c) On February 23, 2023, we announced that our Board authorized us to purchase shares of our outstanding common stock for a total cost of up to $2.5 billion with no expiration date, and we completed all autho",
+      "text_b": "(b) The average price paid per share reported in this column excludes brokerage commissions and a one percent excise tax on share purchases. (c) On February 22, 2024, we announced that our Board authorized us to purchase shares of our outstanding common stock for a total cost of up to $2.5 billion with no expiration date (the February 2024 Program)"
+    }
+  ],
+  "redundancy_with_overlap": {
+    "overlap": 40,
+    "red@0.95": 0.5713
+  },
+  "redundancy_overlap0": {
+    "n_chunks": 20016,
+    "red@0.95": 0.5299,
+    "red@0.95_cross_document_only": 0.5121,
+    "exact_dup_ratio": 0.0498
+  },
+  "coverage_vs_k": [
+    {
+      "k": 5,
+      "cov_mean": 0.9837,
+      "cov_std": 0.004,
+      "silhouette": 0.0485,
+      "inertia": 13606.2,
+      "largest_cluster_share": 0.2637
+    },
+    {
+      "k": 10,
+      "cov_mean": 0.9855,
+      "cov_std": 0.0031,
+      "silhouette": 0.048,
+      "inertia": 12727.4,
+      "largest_cluster_share": 0.1406
+    },
+    {
+      "k": 20,
+      "cov_mean": 0.9834,
+      "cov_std": 0.0051,
+      "silhouette": 0.0568,
+      "inertia": 11710.4,
+      "largest_cluster_share": 0.0848
+    },
+    {
+      "k": 50,
+      "cov_mean": 0.9842,
+      "cov_std": 0.0037,
+      "silhouette": 0.0631,
+      "inertia": 10450.5,
+      "largest_cluster_share": 0.0373
+    },
+    {
+      "k": 100,
+      "cov_mean": 0.9865,
+      "cov_std": 0.0008,
+      "silhouette": 0.0651,
+      "inertia": 9466.2,
+      "largest_cluster_share": 0.0194
+    }
+  ]
+}

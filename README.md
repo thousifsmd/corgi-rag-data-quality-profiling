@@ -12,7 +12,7 @@ profiling-driven admission gate recovers retrieval quality while shrinking the i
 
 | Path | Contents |
 |---|---|
-| `code/` | all scripts (data fetch, profiler, defect-injection, gate, ablation, figures) + `requirements.txt` |
+| `code/` | all scripts (data fetch, profiler, defect-injection, gate, ablation, sensitivity/baselines, cross-corpus, scale, error analysis, figures) + `requirements.txt` |
 | `results/` | committed snapshot of the paper's numbers (JSON/CSV) and figures |
 | `data/`, `out/` | **git-ignored** — downloaded corpora and embedding caches; |
 
@@ -35,6 +35,8 @@ python -I corgi_ablation.py --data ../data/beir/scifact --out ../out  # per-dime
 python -I corgi_gate.py --data ../data/beir/scifact --out ../out --model sentence-transformers/all-mpnet-base-v2   # C4 generalization
 ```
 
+The extended experiments (statistics and baselines, NFCorpus/ArguAna, 523k-chunk scale test, EDGAR error analysis, processing order) are listed in [`code/README.md`](code/README.md); their outputs are `results/c5`–`c9`.
+
 Full per-script documentation and the metric definitions are in [`code/README.md`](code/README.md).
 
 ## Reproducibility
@@ -47,7 +49,7 @@ Python 3.10+ (tested on 3.14), see `code/requirements.txt`. No GPU required.
 
 ## Data sources & licensing
 - **SEC EDGAR** 10-K filings — public domain (U.S. government); fetched live, not redistributed here.
-- **BEIR / SciFact** — downloaded from the BEIR distribution; see BEIR's license.
+- **BEIR (SciFact, NFCorpus, ArguAna, Quora)** — downloaded from the BEIR distribution or its Hugging Face mirror; see BEIR's license and each dataset's terms.
 
 ## License
 MIT — see [`LICENSE`](LICENSE).

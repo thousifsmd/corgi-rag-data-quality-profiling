@@ -1,0 +1,758 @@
+[
+  {
+    "dataset": "nfcorpus",
+    "n_docs": 3633,
+    "n_queries": 323,
+    "natural": {
+      "exact_dup_ratio": 0.011,
+      "red@0.95": 0.0259,
+      "red@0.90": 0.0534,
+      "mean_nn_sim": 0.7396,
+      "baseline": {
+        "ndcg": 0.3178,
+        "recall": 0.155
+      },
+      "gate": [
+        {
+          "tau": 0.9,
+          "removed": 101,
+          "frac_removed": 0.0278,
+          "ndcg": 0.314,
+          "d_ndcg": -0.0038,
+          "recall": 0.1527,
+          "d_recall": -0.0023,
+          "queries_with_quarantined_relevant_doc": 144,
+          "pct_queries_with_quarantined_relevant_doc": 44.58,
+          "queries_recall_drop": 19,
+          "paired_ndcg_vs_raw": {
+            "mean_diff": -0.0038,
+            "ci95": [
+              -0.0063,
+              -0.0013
+            ],
+            "wilcoxon_p": 0.0030290534929863677
+          }
+        },
+        {
+          "tau": 0.93,
+          "removed": 58,
+          "frac_removed": 0.016,
+          "ndcg": 0.3154,
+          "d_ndcg": -0.0024,
+          "recall": 0.1533,
+          "d_recall": -0.0017,
+          "queries_with_quarantined_relevant_doc": 122,
+          "pct_queries_with_quarantined_relevant_doc": 37.77,
+          "queries_recall_drop": 13,
+          "paired_ndcg_vs_raw": {
+            "mean_diff": -0.0024,
+            "ci95": [
+              -0.0045,
+              -0.0005
+            ],
+            "wilcoxon_p": 0.023991956480347812
+          }
+        },
+        {
+          "tau": 0.95,
+          "removed": 48,
+          "frac_removed": 0.0132,
+          "ndcg": 0.3159,
+          "d_ndcg": -0.0019,
+          "recall": 0.1535,
+          "d_recall": -0.0015,
+          "queries_with_quarantined_relevant_doc": 113,
+          "pct_queries_with_quarantined_relevant_doc": 34.98,
+          "queries_recall_drop": 12,
+          "paired_ndcg_vs_raw": {
+            "mean_diff": -0.0019,
+            "ci95": [
+              -0.0039,
+              0.0001
+            ],
+            "wilcoxon_p": 0.07271968517762482
+          }
+        },
+        {
+          "tau": 0.97,
+          "removed": 42,
+          "frac_removed": 0.0116,
+          "ndcg": 0.3169,
+          "d_ndcg": -0.0009,
+          "recall": 0.154,
+          "d_recall": -0.001,
+          "queries_with_quarantined_relevant_doc": 99,
+          "pct_queries_with_quarantined_relevant_doc": 30.65,
+          "queries_recall_drop": 8,
+          "paired_ndcg_vs_raw": {
+            "mean_diff": -0.0009,
+            "ci95": [
+              -0.0028,
+              0.0009
+            ],
+            "wilcoxon_p": 0.37593143158140063
+          }
+        }
+      ]
+    },
+    "injected": {
+      "seeds": 3,
+      "summary": {
+        "clean": {
+          "ndcg": {
+            "mean": 0.3178,
+            "std": 0.0
+          },
+          "recall": {
+            "mean": 0.155,
+            "std": 0.0
+          },
+          "dup_occ": {
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "size": {
+            "mean": 3633.0,
+            "std": 0.0
+          }
+        },
+        "ungated": {
+          "ndcg": {
+            "mean": 0.2539,
+            "std": 0.0031
+          },
+          "recall": {
+            "mean": 0.1369,
+            "std": 0.002
+          },
+          "dup_occ": {
+            "mean": 0.281,
+            "std": 0.002
+          },
+          "size": {
+            "mean": 5086.0,
+            "std": 0.0
+          }
+        },
+        "exact-dedup": {
+          "ndcg": {
+            "mean": 0.2539,
+            "std": 0.0021
+          },
+          "recall": {
+            "mean": 0.1367,
+            "std": 0.002
+          },
+          "dup_occ": {
+            "mean": 0.2841,
+            "std": 0.0026
+          },
+          "size": {
+            "mean": 5039.6667,
+            "std": 2.0817
+          }
+        },
+        "minhash-0.8": {
+          "ndcg": {
+            "mean": 0.3135,
+            "std": 0.0016
+          },
+          "recall": {
+            "mean": 0.1536,
+            "std": 0.0004
+          },
+          "dup_occ": {
+            "mean": 0.0309,
+            "std": 0.0056
+          },
+          "size": {
+            "mean": 3695.6667,
+            "std": 18.9297
+          }
+        },
+        "CORGI": {
+          "ndcg": {
+            "mean": 0.3147,
+            "std": 0.0006
+          },
+          "recall": {
+            "mean": 0.1531,
+            "std": 0.0003
+          },
+          "dup_occ": {
+            "mean": 0.0087,
+            "std": 0.0032
+          },
+          "size": {
+            "mean": 3603.0,
+            "std": 5.2915
+          }
+        }
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "regimes": {
+            "clean": {
+              "ndcg": 0.31780271258791437,
+              "recall": 0.15498797328057845,
+              "dup_occ": 0.0,
+              "size": 3633
+            },
+            "ungated": {
+              "ndcg": 0.2502966945544499,
+              "recall": 0.13852756117474216,
+              "dup_occ": 0.2829721362229102,
+              "size": 5086
+            },
+            "exact-dedup": {
+              "ndcg": 0.2521288509725773,
+              "recall": 0.1384291478751039,
+              "dup_occ": 0.2857585139318885,
+              "size": 5039
+            },
+            "minhash-0.8": {
+              "ndcg": 0.31266258784236867,
+              "recall": 0.15319779310454082,
+              "dup_occ": 0.034984520123839014,
+              "size": 3704
+            },
+            "CORGI": {
+              "ndcg": 0.31426900048962636,
+              "recall": 0.15283077190101882,
+              "dup_occ": 0.01021671826625387,
+              "size": 3607
+            }
+          },
+          "near_dups_removed_frac": 0.9848589125946318,
+          "originals_removed": 48,
+          "sig_CORGI_vs_ungated": {
+            "mean_diff": 0.064,
+            "ci95": [
+              0.0539,
+              0.0745
+            ],
+            "wilcoxon_p": 6.506207447856264e-31
+          },
+          "sig_minhash_vs_ungated": {
+            "mean_diff": 0.0624,
+            "ci95": [
+              0.0524,
+              0.0727
+            ],
+            "wilcoxon_p": 2.1152902664221078e-30
+          },
+          "sig_CORGI_vs_clean": {
+            "mean_diff": -0.0035,
+            "ci95": [
+              -0.0059,
+              -0.0012
+            ],
+            "wilcoxon_p": 0.0037499732577599143
+          }
+        },
+        {
+          "seed": 1,
+          "regimes": {
+            "clean": {
+              "ndcg": 0.31780271258791437,
+              "recall": 0.15498797328057845,
+              "dup_occ": 0.0,
+              "size": 3633
+            },
+            "ungated": {
+              "ndcg": 0.25536027305701126,
+              "recall": 0.13458368840221122,
+              "dup_occ": 0.28111455108359135,
+              "size": 5086
+            },
+            "exact-dedup": {
+              "ndcg": 0.2534198615695766,
+              "recall": 0.1344910344696416,
+              "dup_occ": 0.28544891640866876,
+              "size": 5038
+            },
+            "minhash-0.8": {
+              "ndcg": 0.315333057765367,
+              "recall": 0.1535185593424968,
+              "dup_occ": 0.024458204334365328,
+              "size": 3674
+            },
+            "CORGI": {
+              "ndcg": 0.31433770626229113,
+              "recall": 0.15303045874501905,
+              "dup_occ": 0.010835913312693499,
+              "size": 3605
+            }
+          },
+          "near_dups_removed_frac": 0.9862353750860289,
+          "originals_removed": 48,
+          "sig_CORGI_vs_ungated": {
+            "mean_diff": 0.059,
+            "ci95": [
+              0.05,
+              0.0682
+            ],
+            "wilcoxon_p": 3.7563133688600486e-31
+          },
+          "sig_minhash_vs_ungated": {
+            "mean_diff": 0.06,
+            "ci95": [
+              0.051,
+              0.0691
+            ],
+            "wilcoxon_p": 9.93414089288852e-32
+          },
+          "sig_CORGI_vs_clean": {
+            "mean_diff": -0.0035,
+            "ci95": [
+              -0.0059,
+              -0.0011
+            ],
+            "wilcoxon_p": 0.0039664784404039545
+          }
+        },
+        {
+          "seed": 2,
+          "regimes": {
+            "clean": {
+              "ndcg": 0.31780271258791437,
+              "recall": 0.15498797328057845,
+              "dup_occ": 0.0,
+              "size": 3633
+            },
+            "ungated": {
+              "ndcg": 0.2559040607080374,
+              "recall": 0.13746924092911242,
+              "dup_occ": 0.2789473684210526,
+              "size": 5086
+            },
+            "exact-dedup": {
+              "ndcg": 0.25616368968877573,
+              "recall": 0.13727273462757966,
+              "dup_occ": 0.28111455108359135,
+              "size": 5042
+            },
+            "minhash-0.8": {
+              "ndcg": 0.3124394048948776,
+              "recall": 0.15407245576216527,
+              "dup_occ": 0.03312693498452012,
+              "size": 3709
+            },
+            "CORGI": {
+              "ndcg": 0.3153668159575534,
+              "recall": 0.15334676341203193,
+              "dup_occ": 0.004953560371517028,
+              "size": 3597
+            }
+          },
+          "near_dups_removed_frac": 0.9917412250516173,
+          "originals_removed": 48,
+          "sig_CORGI_vs_ungated": {
+            "mean_diff": 0.0595,
+            "ci95": [
+              0.0497,
+              0.0697
+            ],
+            "wilcoxon_p": 4.06998719326967e-30
+          },
+          "sig_minhash_vs_ungated": {
+            "mean_diff": 0.0565,
+            "ci95": [
+              0.047,
+              0.0664
+            ],
+            "wilcoxon_p": 1.0726123547292794e-29
+          },
+          "sig_CORGI_vs_clean": {
+            "mean_diff": -0.0024,
+            "ci95": [
+              -0.0045,
+              -0.0004
+            ],
+            "wilcoxon_p": 0.02391877812582048
+          }
+        }
+      ],
+      "seeds_CORGI_sig_vs_ungated": 3
+    }
+  },
+  {
+    "dataset": "arguana",
+    "n_docs": 8674,
+    "n_queries": 1401,
+    "natural": {
+      "exact_dup_ratio": 0.0055,
+      "red@0.95": 0.0323,
+      "red@0.90": 0.0526,
+      "mean_nn_sim": 0.7714,
+      "baseline": {
+        "ndcg": 0.3711,
+        "recall": 0.768
+      },
+      "gate": [
+        {
+          "tau": 0.9,
+          "removed": 231,
+          "frac_removed": 0.0266,
+          "ndcg": 0.3517,
+          "d_ndcg": -0.0194,
+          "recall": 0.7131,
+          "d_recall": -0.055,
+          "queries_with_quarantined_relevant_doc": 137,
+          "pct_queries_with_quarantined_relevant_doc": 9.78,
+          "queries_recall_drop": 98,
+          "paired_ndcg_vs_raw": {
+            "mean_diff": -0.0194,
+            "ci95": [
+              -0.0267,
+              -0.0123
+            ],
+            "wilcoxon_p": 0.0044882162567589645
+          }
+        },
+        {
+          "tau": 0.93,
+          "removed": 158,
+          "frac_removed": 0.0182,
+          "ndcg": 0.3535,
+          "d_ndcg": -0.0176,
+          "recall": 0.7245,
+          "d_recall": -0.0435,
+          "queries_with_quarantined_relevant_doc": 107,
+          "pct_queries_with_quarantined_relevant_doc": 7.64,
+          "queries_recall_drop": 73,
+          "paired_ndcg_vs_raw": {
+            "mean_diff": -0.0176,
+            "ci95": [
+              -0.0236,
+              -0.0118
+            ],
+            "wilcoxon_p": 6.185068973123736e-06
+          }
+        },
+        {
+          "tau": 0.95,
+          "removed": 142,
+          "frac_removed": 0.0164,
+          "ndcg": 0.3535,
+          "d_ndcg": -0.0175,
+          "recall": 0.7252,
+          "d_recall": -0.0428,
+          "queries_with_quarantined_relevant_doc": 104,
+          "pct_queries_with_quarantined_relevant_doc": 7.42,
+          "queries_recall_drop": 71,
+          "paired_ndcg_vs_raw": {
+            "mean_diff": -0.0175,
+            "ci95": [
+              -0.0234,
+              -0.0119
+            ],
+            "wilcoxon_p": 8.786761686033639e-07
+          }
+        },
+        {
+          "tau": 0.97,
+          "removed": 125,
+          "frac_removed": 0.0144,
+          "ndcg": 0.3536,
+          "d_ndcg": -0.0175,
+          "recall": 0.7252,
+          "d_recall": -0.0428,
+          "queries_with_quarantined_relevant_doc": 97,
+          "pct_queries_with_quarantined_relevant_doc": 6.92,
+          "queries_recall_drop": 68,
+          "paired_ndcg_vs_raw": {
+            "mean_diff": -0.0175,
+            "ci95": [
+              -0.0232,
+              -0.012
+            ],
+            "wilcoxon_p": 6.727781549806327e-07
+          }
+        }
+      ]
+    },
+    "injected": {
+      "seeds": 3,
+      "summary": {
+        "clean": {
+          "ndcg": {
+            "mean": 0.3711,
+            "std": 0.0
+          },
+          "recall": {
+            "mean": 0.768,
+            "std": 0.0
+          },
+          "dup_occ": {
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "size": {
+            "mean": 8674.0,
+            "std": 0.0
+          }
+        },
+        "ungated": {
+          "ndcg": {
+            "mean": 0.3146,
+            "std": 0.0021
+          },
+          "recall": {
+            "mean": 0.695,
+            "std": 0.0058
+          },
+          "dup_occ": {
+            "mean": 0.2458,
+            "std": 0.002
+          },
+          "size": {
+            "mean": 12143.0,
+            "std": 0.0
+          }
+        },
+        "exact-dedup": {
+          "ndcg": {
+            "mean": 0.3068,
+            "std": 0.0018
+          },
+          "recall": {
+            "mean": 0.6757,
+            "std": 0.0059
+          },
+          "dup_occ": {
+            "mean": 0.2484,
+            "std": 0.0028
+          },
+          "size": {
+            "mean": 12085.6667,
+            "std": 0.5774
+          }
+        },
+        "minhash-0.8": {
+          "ndcg": {
+            "mean": 0.3484,
+            "std": 0.0006
+          },
+          "recall": {
+            "mean": 0.7173,
+            "std": 0.0021
+          },
+          "dup_occ": {
+            "mean": 0.0284,
+            "std": 0.003
+          },
+          "size": {
+            "mean": 8833.6667,
+            "std": 25.3246
+          }
+        },
+        "CORGI": {
+          "ndcg": {
+            "mean": 0.3461,
+            "std": 0.0005
+          },
+          "recall": {
+            "mean": 0.7166,
+            "std": 0.0021
+          },
+          "dup_occ": {
+            "mean": 0.0421,
+            "std": 0.0017
+          },
+          "size": {
+            "mean": 9046.0,
+            "std": 13.2288
+          }
+        }
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "regimes": {
+            "clean": {
+              "ndcg": 0.3710699574729287,
+              "recall": 0.76802284082798,
+              "dup_occ": 0.0,
+              "size": 8674
+            },
+            "ungated": {
+              "ndcg": 0.3161229301147826,
+              "recall": 0.7002141327623126,
+              "dup_occ": 0.24346895074946465,
+              "size": 12143
+            },
+            "exact-dedup": {
+              "ndcg": 0.3085580119590729,
+              "recall": 0.6823697359029265,
+              "dup_occ": 0.2452533904354033,
+              "size": 12086
+            },
+            "minhash-0.8": {
+              "ndcg": 0.3482525379935593,
+              "recall": 0.715203426124197,
+              "dup_occ": 0.025481798715203428,
+              "size": 8829
+            },
+            "CORGI": {
+              "ndcg": 0.3458260605085122,
+              "recall": 0.7166309778729479,
+              "dup_occ": 0.04204139900071378,
+              "size": 9031
+            }
+          },
+          "near_dups_removed_frac": 0.8561545113865667,
+          "originals_removed": 142,
+          "sig_CORGI_vs_ungated": {
+            "mean_diff": 0.0297,
+            "ci95": [
+              0.023,
+              0.0364
+            ],
+            "wilcoxon_p": 1.1858703951096771e-51
+          },
+          "sig_minhash_vs_ungated": {
+            "mean_diff": 0.0321,
+            "ci95": [
+              0.0253,
+              0.039
+            ],
+            "wilcoxon_p": 2.7352156410986653e-53
+          },
+          "sig_CORGI_vs_clean": {
+            "mean_diff": -0.0252,
+            "ci95": [
+              -0.0312,
+              -0.0195
+            ],
+            "wilcoxon_p": 1.1572041914346485e-17
+          }
+        },
+        {
+          "seed": 1,
+          "regimes": {
+            "clean": {
+              "ndcg": 0.3710699574729287,
+              "recall": 0.76802284082798,
+              "dup_occ": 0.0,
+              "size": 8674
+            },
+            "ungated": {
+              "ndcg": 0.312217372168805,
+              "recall": 0.6887937187723054,
+              "dup_occ": 0.24710920770877948,
+              "size": 12143
+            },
+            "exact-dedup": {
+              "ndcg": 0.3049349666417491,
+              "recall": 0.6709493219129193,
+              "dup_occ": 0.24925053533190578,
+              "size": 12086
+            },
+            "minhash-0.8": {
+              "ndcg": 0.3478549301626522,
+              "recall": 0.7173447537473233,
+              "dup_occ": 0.03154889364739472,
+              "size": 8861
+            },
+            "CORGI": {
+              "ndcg": 0.34668826013451504,
+              "recall": 0.7187723054960742,
+              "dup_occ": 0.040471092077087795,
+              "size": 9056
+            }
+          },
+          "near_dups_removed_frac": 0.8489478235802825,
+          "originals_removed": 142,
+          "sig_CORGI_vs_ungated": {
+            "mean_diff": 0.0345,
+            "ci95": [
+              0.0275,
+              0.0413
+            ],
+            "wilcoxon_p": 4.072965957178403e-53
+          },
+          "sig_minhash_vs_ungated": {
+            "mean_diff": 0.0356,
+            "ci95": [
+              0.0286,
+              0.0426
+            ],
+            "wilcoxon_p": 1.1977720667417542e-52
+          },
+          "sig_CORGI_vs_clean": {
+            "mean_diff": -0.0244,
+            "ci95": [
+              -0.0303,
+              -0.0186
+            ],
+            "wilcoxon_p": 4.2166663800042685e-16
+          }
+        },
+        {
+          "seed": 2,
+          "regimes": {
+            "clean": {
+              "ndcg": 0.3710699574729287,
+              "recall": 0.76802284082798,
+              "dup_occ": 0.0,
+              "size": 8674
+            },
+            "ungated": {
+              "ndcg": 0.31558110807352496,
+              "recall": 0.69593147751606,
+              "dup_occ": 0.24668094218415418,
+              "size": 12143
+            },
+            "exact-dedup": {
+              "ndcg": 0.30698619941095695,
+              "recall": 0.6738044254104212,
+              "dup_occ": 0.25067808708065664,
+              "size": 12085
+            },
+            "minhash-0.8": {
+              "ndcg": 0.34896551764668365,
+              "recall": 0.7194860813704497,
+              "dup_occ": 0.02819414703783012,
+              "size": 8811
+            },
+            "CORGI": {
+              "ndcg": 0.34581877099554154,
+              "recall": 0.7144896502498216,
+              "dup_occ": 0.043897216274089934,
+              "size": 9051
+            }
+          },
+          "near_dups_removed_frac": 0.8503891611415394,
+          "originals_removed": 142,
+          "sig_CORGI_vs_ungated": {
+            "mean_diff": 0.0302,
+            "ci95": [
+              0.0236,
+              0.0368
+            ],
+            "wilcoxon_p": 2.1529212638046715e-49
+          },
+          "sig_minhash_vs_ungated": {
+            "mean_diff": 0.0334,
+            "ci95": [
+              0.0264,
+              0.0402
+            ],
+            "wilcoxon_p": 3.047524401667756e-49
+          },
+          "sig_CORGI_vs_clean": {
+            "mean_diff": -0.0253,
+            "ci95": [
+              -0.0312,
+              -0.0194
+            ],
+            "wilcoxon_p": 6.215141629261326e-17
+          }
+        }
+      ],
+      "seeds_CORGI_sig_vs_ungated": 3
+    }
+  }
+]

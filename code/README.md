@@ -22,6 +22,12 @@ read downloaded data with `python -I` (isolated mode).
 | `corgi_gate.py` | **C3** — contaminate with semantic near-dups; compare clean/ungated/exact-dedup/CORGI-gated | `c3_gate_<model>.{json,csv}` |
 | `corgi_ablation.py` | Per-dimension gate ablation (redundancy vs. thin) | `c4_ablation.{json,csv}` |
 | `make_fig1.py` | Render the pipeline diagram (Figure 1) | `fig1_pipeline.png` |
+| `fetch_beir_hf.py` | Fallback BEIR fetcher via the Hugging Face mirror (NFCorpus, ArguAna, Quora) | `../data/beir/<name>/` |
+| `corgi_sensitivity.py` | **C3 extended** — 5 contamination seeds, bootstrap CIs + paired Wilcoxon, MinHash-LSH / SemDeDup-style / random-prune baselines, τ and θ sweeps, cost of gating on the clean corpus | `c5_sensitivity.json` |
+| `corgi_crossdomain.py` | Generalization — gate on NFCorpus and ArguAna, natural (no injection) and injected (3 seeds) | `c6_crossdomain.json` |
+| `corgi_scale.py` | Runtime / peak memory of profile + gate with FAISS HNSW (up to 523k Quora chunks) and ANN-vs-exact agreement | `c7_scale.jsonl` |
+| `corgi_error_analysis.py` | EDGAR error analysis: what each quarantined chunk duplicates, numeric-difference check, coverage vs. k, overlap-free redundancy | `c8_error_analysis.json` |
+| `corgi_ordering.py` | Processing order (oldest-first vs. newest-first) on a dated corpus | `c9_ordering.json` |
 
 `corgi_gate.py` and `corgi_ablation.py` import helpers from `corgi_inject.py` (kept in one flat
 directory so the imports resolve; `sys.path` is handled for `python -I`).
@@ -40,6 +46,27 @@ python -I corgi_inject.py  --data ../data/beir/scifact --out ../out
 python -I corgi_gate.py    --data ../data/beir/scifact --out ../out
 python -I corgi_ablation.py --data ../data/beir/scifact --out ../out
 python -I corgi_gate.py    --data ../data/beir/scifact --out ../out --model sentence-transformers/all-mpnet-base-v2
+```
+
+Extended experiments (results written to `../results/`):
+
+```bash
+# Statistics, extra baselines, tau/theta sweeps (SciFact, 5 seeds)
+python -I corgi_sensitivity.py --data ../data/beir/scifact --cache ../out --out ../results --seeds 5
+
+# Other corpora (use fetch_beir_hf.py if the BEIR host is unreachable)
+python fetch_beir_hf.py --name nfcorpus --out ../data/beir
+python fetch_beir_hf.py --name arguana  --out ../data/beir
+python -I corgi_crossdomain.py --datasets nfcorpus,arguana --seeds 3 --out ../results
+
+# Scale (embeds Quora once, then times the gate per size; embedding is not part of CORGI's cost)
+python fetch_beir_hf.py --name quora --out ../data/beir
+python -I corgi_scale.py --embed-only --corpus ../data/beir/quora/corpus.jsonl --cache ../out/quora_emb.npy
+python -I corgi_scale.py --emb ../out/quora_emb.npy --size 100000 --tau 0.95
+
+# EDGAR error analysis and processing-order study (needs ../out/embeddings.npy from corgi_profile.py)
+python -I corgi_error_analysis.py --input ../data/edgar --manifest ../data/edgar/manifest.csv --emb ../out/embeddings.npy --out ../results
+python -I corgi_ordering.py       --input ../data/edgar --manifest ../data/edgar/manifest.csv --emb ../out/embeddings.npy --out ../results
 ```
 
 ## Metric definitions (what `corgi_profile.py` computes)

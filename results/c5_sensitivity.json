@@ -1,0 +1,2029 @@
+{
+  "meta": {
+    "seeds": 5,
+    "contaminate": 0.4,
+    "drop_last_frac": 0.15,
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "n_clean": 5183,
+    "n_queries": 300,
+    "clean_similarity_matrix_s": 0.2
+  },
+  "clean_corpus_gate": [
+    {
+      "tau": 0.85,
+      "removed": 63,
+      "frac_removed": 0.0122,
+      "ndcg": 0.6395,
+      "d_ndcg": -0.0056,
+      "recall": 0.7699,
+      "d_recall": -0.0134,
+      "queries_with_quarantined_relevant_doc": 8,
+      "queries_recall_drop": 8,
+      "gate_seconds": 0.03
+    },
+    {
+      "tau": 0.9,
+      "removed": 4,
+      "frac_removed": 0.0008,
+      "ndcg": 0.6464,
+      "d_ndcg": 0.0013,
+      "recall": 0.7833,
+      "d_recall": 0.0,
+      "queries_with_quarantined_relevant_doc": 0,
+      "queries_recall_drop": 0,
+      "gate_seconds": 0.02
+    },
+    {
+      "tau": 0.93,
+      "removed": 0,
+      "frac_removed": 0.0,
+      "ndcg": 0.6451,
+      "d_ndcg": 0.0,
+      "recall": 0.7833,
+      "d_recall": 0.0,
+      "queries_with_quarantined_relevant_doc": 0,
+      "queries_recall_drop": 0,
+      "gate_seconds": 0.03
+    },
+    {
+      "tau": 0.95,
+      "removed": 0,
+      "frac_removed": 0.0,
+      "ndcg": 0.6451,
+      "d_ndcg": 0.0,
+      "recall": 0.7833,
+      "d_recall": 0.0,
+      "queries_with_quarantined_relevant_doc": 0,
+      "queries_recall_drop": 0,
+      "gate_seconds": 0.03
+    },
+    {
+      "tau": 0.97,
+      "removed": 0,
+      "frac_removed": 0.0,
+      "ndcg": 0.6451,
+      "d_ndcg": 0.0,
+      "recall": 0.7833,
+      "d_recall": 0.0,
+      "queries_with_quarantined_relevant_doc": 0,
+      "queries_recall_drop": 0,
+      "gate_seconds": 0.02
+    },
+    {
+      "tau": 0.99,
+      "removed": 0,
+      "frac_removed": 0.0,
+      "ndcg": 0.6451,
+      "d_ndcg": 0.0,
+      "recall": 0.7833,
+      "d_recall": 0.0,
+      "queries_with_quarantined_relevant_doc": 0,
+      "queries_recall_drop": 0,
+      "gate_seconds": 0.02
+    }
+  ],
+  "summary": {
+    "regimes": {
+      "clean": {
+        "ndcg": {
+          "mean": 0.6451,
+          "std": 0.0
+        },
+        "recall": {
+          "mean": 0.7833,
+          "std": 0.0
+        },
+        "dup_occ": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "size": {
+          "mean": 5183.0,
+          "std": 0.0
+        }
+      },
+      "ungated": {
+        "ndcg": {
+          "mean": 0.5784,
+          "std": 0.0054
+        },
+        "recall": {
+          "mean": 0.7569,
+          "std": 0.004
+        },
+        "dup_occ": {
+          "mean": 0.2881,
+          "std": 0.0021
+        },
+        "size": {
+          "mean": 7256.0,
+          "std": 0.0
+        }
+      },
+      "exact-dedup": {
+        "ndcg": {
+          "mean": 0.5784,
+          "std": 0.0054
+        },
+        "recall": {
+          "mean": 0.7569,
+          "std": 0.004
+        },
+        "dup_occ": {
+          "mean": 0.2881,
+          "std": 0.0021
+        },
+        "size": {
+          "mean": 7256.0,
+          "std": 0.0
+        }
+      },
+      "minhash-0.8": {
+        "ndcg": {
+          "mean": 0.6394,
+          "std": 0.0022
+        },
+        "recall": {
+          "mean": 0.7809,
+          "std": 0.0021
+        },
+        "dup_occ": {
+          "mean": 0.0269,
+          "std": 0.0043
+        },
+        "size": {
+          "mean": 5333.8,
+          "std": 21.5221
+        }
+      },
+      "semdedup-0.95": {
+        "ndcg": {
+          "mean": 0.6439,
+          "std": 0.0014
+        },
+        "recall": {
+          "mean": 0.782,
+          "std": 0.0022
+        },
+        "dup_occ": {
+          "mean": 0.0073,
+          "std": 0.0022
+        },
+        "size": {
+          "mean": 5219.4,
+          "std": 5.6833
+        }
+      },
+      "CORGI": {
+        "ndcg": {
+          "mean": 0.6442,
+          "std": 0.0009
+        },
+        "recall": {
+          "mean": 0.7827,
+          "std": 0.0009
+        },
+        "dup_occ": {
+          "mean": 0.0049,
+          "std": 0.0017
+        },
+        "size": {
+          "mean": 5209.6,
+          "std": 5.0299
+        }
+      },
+      "random-prune (matched size)": {
+        "ndcg": {
+          "mean": 0.4402,
+          "std": 0.0139
+        },
+        "recall": {
+          "mean": 0.5512,
+          "std": 0.0122
+        },
+        "dup_occ": {
+          "mean": 0.2933,
+          "std": 0.0086
+        },
+        "size": {
+          "mean": 5209.6,
+          "std": 5.0299
+        }
+      }
+    },
+    "removal_quality": {
+      "exact-dedup": {
+        "removed": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "near_dups_removed": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "originals_removed": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "precision": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "recall": {
+          "mean": 0.0,
+          "std": 0.0
+        }
+      },
+      "minhash-0.8": {
+        "removed": {
+          "mean": 1922.2,
+          "std": 21.5221
+        },
+        "near_dups_removed": {
+          "mean": 1922.2,
+          "std": 21.5221
+        },
+        "originals_removed": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "precision": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "recall": {
+          "mean": 0.9273,
+          "std": 0.0104
+        }
+      },
+      "semdedup-0.95": {
+        "removed": {
+          "mean": 2036.6,
+          "std": 5.6833
+        },
+        "near_dups_removed": {
+          "mean": 2036.6,
+          "std": 5.6833
+        },
+        "originals_removed": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "precision": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "recall": {
+          "mean": 0.9824,
+          "std": 0.0027
+        }
+      },
+      "CORGI": {
+        "removed": {
+          "mean": 2046.4,
+          "std": 5.0299
+        },
+        "near_dups_removed": {
+          "mean": 2046.4,
+          "std": 5.0299
+        },
+        "originals_removed": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "precision": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "recall": {
+          "mean": 0.9872,
+          "std": 0.0024
+        }
+      }
+    },
+    "tau_sweep": [
+      {
+        "tau": 0.85,
+        "ndcg": {
+          "mean": 0.6395,
+          "std": 0.0
+        },
+        "recall": {
+          "mean": 0.9984,
+          "std": 0.0004
+        },
+        "dup_occ": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "size": {
+          "mean": 5123.4,
+          "std": 0.8944
+        },
+        "precision": {
+          "mean": 0.9705,
+          "std": 0.0
+        },
+        "originals_removed": {
+          "mean": 63.0,
+          "std": 0.0
+        },
+        "queries_with_quarantined_relevant_doc": {
+          "mean": 8.0,
+          "std": 0.0
+        },
+        "queries_recall_drop_vs_clean": {
+          "mean": 8.0,
+          "std": 0.0
+        }
+      },
+      {
+        "tau": 0.9,
+        "ndcg": {
+          "mean": 0.6464,
+          "std": 0.0
+        },
+        "recall": {
+          "mean": 0.9986,
+          "std": 0.0007
+        },
+        "dup_occ": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "size": {
+          "mean": 5182.0,
+          "std": 1.5811
+        },
+        "precision": {
+          "mean": 0.9981,
+          "std": 0.0
+        },
+        "originals_removed": {
+          "mean": 4.0,
+          "std": 0.0
+        },
+        "queries_with_quarantined_relevant_doc": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "queries_recall_drop_vs_clean": {
+          "mean": 0.0,
+          "std": 0.0
+        }
+      },
+      {
+        "tau": 0.93,
+        "ndcg": {
+          "mean": 0.645,
+          "std": 0.0001
+        },
+        "recall": {
+          "mean": 0.9957,
+          "std": 0.0015
+        },
+        "dup_occ": {
+          "mean": 0.0005,
+          "std": 0.0004
+        },
+        "size": {
+          "mean": 5191.8,
+          "std": 3.1145
+        },
+        "precision": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "originals_removed": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "queries_with_quarantined_relevant_doc": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "queries_recall_drop_vs_clean": {
+          "mean": 0.0,
+          "std": 0.0
+        }
+      },
+      {
+        "tau": 0.95,
+        "ndcg": {
+          "mean": 0.6442,
+          "std": 0.0009
+        },
+        "recall": {
+          "mean": 0.9872,
+          "std": 0.0024
+        },
+        "dup_occ": {
+          "mean": 0.0049,
+          "std": 0.0017
+        },
+        "size": {
+          "mean": 5209.6,
+          "std": 5.0299
+        },
+        "precision": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "originals_removed": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "queries_with_quarantined_relevant_doc": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "queries_recall_drop_vs_clean": {
+          "mean": 0.4,
+          "std": 0.5477
+        }
+      },
+      {
+        "tau": 0.97,
+        "ndcg": {
+          "mean": 0.6417,
+          "std": 0.0011
+        },
+        "recall": {
+          "mean": 0.9554,
+          "std": 0.004
+        },
+        "dup_occ": {
+          "mean": 0.0211,
+          "std": 0.0014
+        },
+        "size": {
+          "mean": 5275.4,
+          "std": 8.2037
+        },
+        "precision": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "originals_removed": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "queries_with_quarantined_relevant_doc": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "queries_recall_drop_vs_clean": {
+          "mean": 1.2,
+          "std": 0.4472
+        }
+      },
+      {
+        "tau": 0.99,
+        "ndcg": {
+          "mean": 0.6294,
+          "std": 0.003
+        },
+        "recall": {
+          "mean": 0.7624,
+          "std": 0.009
+        },
+        "dup_occ": {
+          "mean": 0.0903,
+          "std": 0.0041
+        },
+        "size": {
+          "mean": 5675.6,
+          "std": 18.5957
+        },
+        "precision": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "originals_removed": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "queries_with_quarantined_relevant_doc": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "queries_recall_drop_vs_clean": {
+          "mean": 3.2,
+          "std": 0.8367
+        }
+      }
+    ],
+    "theta_sweep": [
+      {
+        "theta": 0,
+        "ndcg": {
+          "mean": 0.6442,
+          "std": 0.0009
+        },
+        "recall": {
+          "mean": 0.7827,
+          "std": 0.0009
+        },
+        "size": {
+          "mean": 5209.6,
+          "std": 5.0299
+        },
+        "removed": {
+          "mean": 2046.4,
+          "std": 5.0299
+        }
+      },
+      {
+        "theta": 10,
+        "ndcg": {
+          "mean": 0.6442,
+          "std": 0.0009
+        },
+        "recall": {
+          "mean": 0.7827,
+          "std": 0.0009
+        },
+        "size": {
+          "mean": 5209.6,
+          "std": 5.0299
+        },
+        "removed": {
+          "mean": 2046.4,
+          "std": 5.0299
+        }
+      },
+      {
+        "theta": 20,
+        "ndcg": {
+          "mean": 0.6442,
+          "std": 0.0009
+        },
+        "recall": {
+          "mean": 0.7827,
+          "std": 0.0009
+        },
+        "size": {
+          "mean": 5209.6,
+          "std": 5.0299
+        },
+        "removed": {
+          "mean": 2046.4,
+          "std": 5.0299
+        }
+      },
+      {
+        "theta": 30,
+        "ndcg": {
+          "mean": 0.6442,
+          "std": 0.0009
+        },
+        "recall": {
+          "mean": 0.7827,
+          "std": 0.0009
+        },
+        "size": {
+          "mean": 5209.6,
+          "std": 5.0299
+        },
+        "removed": {
+          "mean": 2046.4,
+          "std": 5.0299
+        }
+      },
+      {
+        "theta": 50,
+        "ndcg": {
+          "mean": 0.6442,
+          "std": 0.0009
+        },
+        "recall": {
+          "mean": 0.7827,
+          "std": 0.0009
+        },
+        "size": {
+          "mean": 5205.6,
+          "std": 5.0299
+        },
+        "removed": {
+          "mean": 2050.4,
+          "std": 5.0299
+        }
+      }
+    ],
+    "timing_seconds": {
+      "similarity_matrix_s": {
+        "mean": 0.398,
+        "std": 0.0593
+      },
+      "exact_dedup_s": {
+        "mean": 0.436,
+        "std": 0.0467
+      },
+      "minhash_s": {
+        "mean": 2.522,
+        "std": 0.0986
+      },
+      "semdedup_s": {
+        "mean": 1.928,
+        "std": 0.124
+      },
+      "corgi_gate_s": {
+        "mean": 0.038,
+        "std": 0.0045
+      }
+    },
+    "significance_vs_ungated_ndcg_seeds_p_lt_0.05": {
+      "CORGI": 5,
+      "exact-dedup": 0,
+      "minhash-0.8": 5,
+      "semdedup-0.95": 5,
+      "random-prune (matched size)": 5,
+      "clean": 5,
+      "CORGI_vs_clean": 2,
+      "CORGI_vs_minhash": 4,
+      "CORGI_vs_semdedup": 0
+    }
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "M": 7256,
+      "timing": {
+        "similarity_matrix_s": 0.34,
+        "exact_dedup_s": 0.46,
+        "minhash_s": 2.4,
+        "semdedup_s": 2.08,
+        "corgi_gate_s": 0.04
+      },
+      "regimes": {
+        "clean": {
+          "ndcg": 0.6451,
+          "recall": 0.7833,
+          "dup_occ": 0.0,
+          "size": 5183
+        },
+        "ungated": {
+          "ndcg": 0.5834,
+          "recall": 0.7549,
+          "dup_occ": 0.2883,
+          "size": 7256
+        },
+        "exact-dedup": {
+          "ndcg": 0.5834,
+          "recall": 0.7549,
+          "dup_occ": 0.2883,
+          "size": 7256
+        },
+        "minhash-0.8": {
+          "ndcg": 0.6412,
+          "recall": 0.7833,
+          "dup_occ": 0.0277,
+          "size": 5344
+        },
+        "semdedup-0.95": {
+          "ndcg": 0.6446,
+          "recall": 0.7833,
+          "dup_occ": 0.0057,
+          "size": 5221
+        },
+        "CORGI": {
+          "ndcg": 0.6446,
+          "recall": 0.7833,
+          "dup_occ": 0.004,
+          "size": 5211
+        },
+        "random-prune (matched size)": {
+          "ndcg": 0.4483,
+          "recall": 0.5513,
+          "dup_occ": 0.294,
+          "size": 5211
+        }
+      },
+      "removal_quality": {
+        "exact-dedup": {
+          "removed": 0,
+          "near_dups_removed": 0,
+          "originals_removed": 0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "minhash-0.8": {
+          "removed": 1912,
+          "near_dups_removed": 1912,
+          "originals_removed": 0,
+          "precision": 1.0,
+          "recall": 0.9223
+        },
+        "semdedup-0.95": {
+          "removed": 2035,
+          "near_dups_removed": 2035,
+          "originals_removed": 0,
+          "precision": 1.0,
+          "recall": 0.9817
+        },
+        "CORGI": {
+          "removed": 2045,
+          "near_dups_removed": 2045,
+          "originals_removed": 0,
+          "precision": 1.0,
+          "recall": 0.9865
+        }
+      },
+      "tau_sweep": [
+        {
+          "tau": 0.85,
+          "ndcg": 0.6394597790930862,
+          "recall": 0.9981,
+          "dup_occ": 0.0,
+          "size": 5124,
+          "queries_with_quarantined_relevant_doc": 8,
+          "queries_recall_drop_vs_clean": 8,
+          "removed": 2132,
+          "near_dups_removed": 2069,
+          "originals_removed": 63,
+          "precision": 0.9705
+        },
+        {
+          "tau": 0.9,
+          "ndcg": 0.6463714478221647,
+          "recall": 0.9986,
+          "dup_occ": 0.0,
+          "size": 5182,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 0,
+          "removed": 2074,
+          "near_dups_removed": 2070,
+          "originals_removed": 4,
+          "precision": 0.9981
+        },
+        {
+          "tau": 0.93,
+          "ndcg": 0.6450816521455776,
+          "recall": 0.9932,
+          "dup_occ": 0.0006666666666666668,
+          "size": 5197,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 0,
+          "removed": 2059,
+          "near_dups_removed": 2059,
+          "originals_removed": 0,
+          "precision": 1.0
+        },
+        {
+          "tau": 0.95,
+          "ndcg": 0.6446153164876046,
+          "recall": 0.9865,
+          "dup_occ": 0.004000000000000001,
+          "size": 5211,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 0,
+          "removed": 2045,
+          "near_dups_removed": 2045,
+          "originals_removed": 0,
+          "precision": 1.0
+        },
+        {
+          "tau": 0.97,
+          "ndcg": 0.6425374493996043,
+          "recall": 0.9489,
+          "dup_occ": 0.022000000000000002,
+          "size": 5289,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 1,
+          "removed": 1967,
+          "near_dups_removed": 1967,
+          "originals_removed": 0,
+          "precision": 1.0
+        },
+        {
+          "tau": 0.99,
+          "ndcg": 0.6315495237653617,
+          "recall": 0.7511,
+          "dup_occ": 0.092,
+          "size": 5699,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 4,
+          "removed": 1557,
+          "near_dups_removed": 1557,
+          "originals_removed": 0,
+          "precision": 1.0
+        }
+      ],
+      "theta_sweep": [
+        {
+          "theta": 0,
+          "ndcg": 0.6446153164876046,
+          "recall": 0.7833333333333333,
+          "size": 5211,
+          "removed": 2045
+        },
+        {
+          "theta": 10,
+          "ndcg": 0.6446153164876046,
+          "recall": 0.7833333333333333,
+          "size": 5211,
+          "removed": 2045
+        },
+        {
+          "theta": 20,
+          "ndcg": 0.6446153164876046,
+          "recall": 0.7833333333333333,
+          "size": 5211,
+          "removed": 2045
+        },
+        {
+          "theta": 30,
+          "ndcg": 0.6446153164876046,
+          "recall": 0.7833333333333333,
+          "size": 5211,
+          "removed": 2045
+        },
+        {
+          "theta": 50,
+          "ndcg": 0.6446153164876046,
+          "recall": 0.7833333333333333,
+          "size": 5207,
+          "removed": 2049
+        }
+      ],
+      "significance_vs_ungated_ndcg": {
+        "CORGI": {
+          "mean_diff": 0.0613,
+          "ci95": [
+            0.0488,
+            0.0747
+          ],
+          "wilcoxon_p": 1.0226190419473428e-17
+        },
+        "exact-dedup": {
+          "mean_diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "wilcoxon_p": 1.0
+        },
+        "minhash-0.8": {
+          "mean_diff": 0.0578,
+          "ci95": [
+            0.0451,
+            0.0714
+          ],
+          "wilcoxon_p": 2.199933869702035e-16
+        },
+        "semdedup-0.95": {
+          "mean_diff": 0.0613,
+          "ci95": [
+            0.0488,
+            0.0747
+          ],
+          "wilcoxon_p": 1.0226190419473428e-17
+        },
+        "random-prune (matched size)": {
+          "mean_diff": -0.135,
+          "ci95": [
+            -0.175,
+            -0.0974
+          ],
+          "wilcoxon_p": 2.2735889003881697e-09
+        },
+        "clean": {
+          "mean_diff": 0.0617,
+          "ci95": [
+            0.0492,
+            0.0752
+          ],
+          "wilcoxon_p": 1.0226809367215236e-17
+        },
+        "CORGI_vs_clean": {
+          "mean_diff": -0.0005,
+          "ci95": [
+            -0.0011,
+            0.0
+          ],
+          "wilcoxon_p": 0.10880943004054568
+        },
+        "CORGI_vs_minhash": {
+          "mean_diff": 0.0034,
+          "ci95": [
+            0.0011,
+            0.0068
+          ],
+          "wilcoxon_p": 0.0031280621591040884
+        },
+        "CORGI_vs_semdedup": {
+          "mean_diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "wilcoxon_p": 1.0
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "M": 7256,
+      "timing": {
+        "similarity_matrix_s": 0.36,
+        "exact_dedup_s": 0.45,
+        "minhash_s": 2.58,
+        "semdedup_s": 2.04,
+        "corgi_gate_s": 0.04
+      },
+      "regimes": {
+        "clean": {
+          "ndcg": 0.6451,
+          "recall": 0.7833,
+          "dup_occ": 0.0,
+          "size": 5183
+        },
+        "ungated": {
+          "ndcg": 0.5792,
+          "recall": 0.7538,
+          "dup_occ": 0.2903,
+          "size": 7256
+        },
+        "exact-dedup": {
+          "ndcg": 0.5792,
+          "recall": 0.7538,
+          "dup_occ": 0.2903,
+          "size": 7256
+        },
+        "minhash-0.8": {
+          "ndcg": 0.6388,
+          "recall": 0.78,
+          "dup_occ": 0.022,
+          "size": 5311
+        },
+        "semdedup-0.95": {
+          "ndcg": 0.6451,
+          "recall": 0.7833,
+          "dup_occ": 0.0057,
+          "size": 5213
+        },
+        "CORGI": {
+          "ndcg": 0.6451,
+          "recall": 0.7833,
+          "dup_occ": 0.003,
+          "size": 5206
+        },
+        "random-prune (matched size)": {
+          "ndcg": 0.4208,
+          "recall": 0.5305,
+          "dup_occ": 0.3023,
+          "size": 5206
+        }
+      },
+      "removal_quality": {
+        "exact-dedup": {
+          "removed": 0,
+          "near_dups_removed": 0,
+          "originals_removed": 0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "minhash-0.8": {
+          "removed": 1945,
+          "near_dups_removed": 1945,
+          "originals_removed": 0,
+          "precision": 1.0,
+          "recall": 0.9383
+        },
+        "semdedup-0.95": {
+          "removed": 2043,
+          "near_dups_removed": 2043,
+          "originals_removed": 0,
+          "precision": 1.0,
+          "recall": 0.9855
+        },
+        "CORGI": {
+          "removed": 2050,
+          "near_dups_removed": 2050,
+          "originals_removed": 0,
+          "precision": 1.0,
+          "recall": 0.9889
+        }
+      },
+      "tau_sweep": [
+        {
+          "tau": 0.85,
+          "ndcg": 0.6394597790930862,
+          "recall": 0.9981,
+          "dup_occ": 0.0,
+          "size": 5124,
+          "queries_with_quarantined_relevant_doc": 8,
+          "queries_recall_drop_vs_clean": 8,
+          "removed": 2132,
+          "near_dups_removed": 2069,
+          "originals_removed": 63,
+          "precision": 0.9705
+        },
+        {
+          "tau": 0.9,
+          "ndcg": 0.6463714478221647,
+          "recall": 0.9995,
+          "dup_occ": 0.0,
+          "size": 5180,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 0,
+          "removed": 2076,
+          "near_dups_removed": 2072,
+          "originals_removed": 4,
+          "precision": 0.9981
+        },
+        {
+          "tau": 0.93,
+          "ndcg": 0.6450816521455776,
+          "recall": 0.9966,
+          "dup_occ": 0.0,
+          "size": 5190,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 0,
+          "removed": 2066,
+          "near_dups_removed": 2066,
+          "originals_removed": 0,
+          "precision": 1.0
+        },
+        {
+          "tau": 0.95,
+          "ndcg": 0.6450816521455776,
+          "recall": 0.9889,
+          "dup_occ": 0.003,
+          "size": 5206,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 0,
+          "removed": 2050,
+          "near_dups_removed": 2050,
+          "originals_removed": 0,
+          "precision": 1.0
+        },
+        {
+          "tau": 0.97,
+          "ndcg": 0.6428353467885782,
+          "recall": 0.9595,
+          "dup_occ": 0.019000000000000003,
+          "size": 5267,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 1,
+          "removed": 1989,
+          "near_dups_removed": 1989,
+          "originals_removed": 0,
+          "precision": 1.0
+        },
+        {
+          "tau": 0.99,
+          "ndcg": 0.6310129159742742,
+          "recall": 0.7733,
+          "dup_occ": 0.09133333333333332,
+          "size": 5653,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 3,
+          "removed": 1603,
+          "near_dups_removed": 1603,
+          "originals_removed": 0,
+          "precision": 1.0
+        }
+      ],
+      "theta_sweep": [
+        {
+          "theta": 0,
+          "ndcg": 0.6450816521455776,
+          "recall": 0.7833333333333333,
+          "size": 5206,
+          "removed": 2050
+        },
+        {
+          "theta": 10,
+          "ndcg": 0.6450816521455776,
+          "recall": 0.7833333333333333,
+          "size": 5206,
+          "removed": 2050
+        },
+        {
+          "theta": 20,
+          "ndcg": 0.6450816521455776,
+          "recall": 0.7833333333333333,
+          "size": 5206,
+          "removed": 2050
+        },
+        {
+          "theta": 30,
+          "ndcg": 0.6450816521455776,
+          "recall": 0.7833333333333333,
+          "size": 5206,
+          "removed": 2050
+        },
+        {
+          "theta": 50,
+          "ndcg": 0.6450816521455776,
+          "recall": 0.7833333333333333,
+          "size": 5202,
+          "removed": 2054
+        }
+      ],
+      "significance_vs_ungated_ndcg": {
+        "CORGI": {
+          "mean_diff": 0.0659,
+          "ci95": [
+            0.0525,
+            0.08
+          ],
+          "wilcoxon_p": 8.995933621627049e-19
+        },
+        "exact-dedup": {
+          "mean_diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "wilcoxon_p": 1.0
+        },
+        "minhash-0.8": {
+          "mean_diff": 0.0596,
+          "ci95": [
+            0.0468,
+            0.0732
+          ],
+          "wilcoxon_p": 3.0866477431848565e-17
+        },
+        "semdedup-0.95": {
+          "mean_diff": 0.0659,
+          "ci95": [
+            0.0525,
+            0.08
+          ],
+          "wilcoxon_p": 8.995933621627049e-19
+        },
+        "random-prune (matched size)": {
+          "mean_diff": -0.1584,
+          "ci95": [
+            -0.2043,
+            -0.1147
+          ],
+          "wilcoxon_p": 1.0677179752305541e-09
+        },
+        "clean": {
+          "mean_diff": 0.0659,
+          "ci95": [
+            0.0525,
+            0.08
+          ],
+          "wilcoxon_p": 8.995933621627049e-19
+        },
+        "CORGI_vs_clean": {
+          "mean_diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "wilcoxon_p": 1.0
+        },
+        "CORGI_vs_minhash": {
+          "mean_diff": 0.0063,
+          "ci95": [
+            0.0025,
+            0.011
+          ],
+          "wilcoxon_p": 0.0014153153573368978
+        },
+        "CORGI_vs_semdedup": {
+          "mean_diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "wilcoxon_p": 1.0
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "M": 7256,
+      "timing": {
+        "similarity_matrix_s": 0.37,
+        "exact_dedup_s": 0.37,
+        "minhash_s": 2.6,
+        "semdedup_s": 1.83,
+        "corgi_gate_s": 0.04
+      },
+      "regimes": {
+        "clean": {
+          "ndcg": 0.6451,
+          "recall": 0.7833,
+          "dup_occ": 0.0,
+          "size": 5183
+        },
+        "ungated": {
+          "ndcg": 0.5779,
+          "recall": 0.7627,
+          "dup_occ": 0.2887,
+          "size": 7256
+        },
+        "exact-dedup": {
+          "ndcg": 0.5779,
+          "recall": 0.7627,
+          "dup_occ": 0.2887,
+          "size": 7256
+        },
+        "minhash-0.8": {
+          "ndcg": 0.6412,
+          "recall": 0.7817,
+          "dup_occ": 0.0243,
+          "size": 5324
+        },
+        "semdedup-0.95": {
+          "ndcg": 0.6442,
+          "recall": 0.7833,
+          "dup_occ": 0.0093,
+          "size": 5216
+        },
+        "CORGI": {
+          "ndcg": 0.6443,
+          "recall": 0.7833,
+          "dup_occ": 0.0067,
+          "size": 5210
+        },
+        "random-prune (matched size)": {
+          "ndcg": 0.4303,
+          "recall": 0.5589,
+          "dup_occ": 0.2893,
+          "size": 5210
+        }
+      },
+      "removal_quality": {
+        "exact-dedup": {
+          "removed": 0,
+          "near_dups_removed": 0,
+          "originals_removed": 0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "minhash-0.8": {
+          "removed": 1932,
+          "near_dups_removed": 1932,
+          "originals_removed": 0,
+          "precision": 1.0,
+          "recall": 0.932
+        },
+        "semdedup-0.95": {
+          "removed": 2040,
+          "near_dups_removed": 2040,
+          "originals_removed": 0,
+          "precision": 1.0,
+          "recall": 0.9841
+        },
+        "CORGI": {
+          "removed": 2046,
+          "near_dups_removed": 2046,
+          "originals_removed": 0,
+          "precision": 1.0,
+          "recall": 0.987
+        }
+      },
+      "tau_sweep": [
+        {
+          "tau": 0.85,
+          "ndcg": 0.6394597790930862,
+          "recall": 0.9986,
+          "dup_occ": 0.0,
+          "size": 5123,
+          "queries_with_quarantined_relevant_doc": 8,
+          "queries_recall_drop_vs_clean": 8,
+          "removed": 2133,
+          "near_dups_removed": 2070,
+          "originals_removed": 63,
+          "precision": 0.9705
+        },
+        {
+          "tau": 0.9,
+          "ndcg": 0.6463714478221647,
+          "recall": 0.999,
+          "dup_occ": 0.0,
+          "size": 5181,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 0,
+          "removed": 2075,
+          "near_dups_removed": 2071,
+          "originals_removed": 4,
+          "precision": 0.9981
+        },
+        {
+          "tau": 0.93,
+          "ndcg": 0.6448505740058222,
+          "recall": 0.9957,
+          "dup_occ": 0.0003333333333333334,
+          "size": 5192,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 0,
+          "removed": 2064,
+          "near_dups_removed": 2064,
+          "originals_removed": 0,
+          "precision": 1.0
+        },
+        {
+          "tau": 0.95,
+          "ndcg": 0.6442935611147093,
+          "recall": 0.987,
+          "dup_occ": 0.006666666666666667,
+          "size": 5210,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 0,
+          "removed": 2046,
+          "near_dups_removed": 2046,
+          "originals_removed": 0,
+          "precision": 1.0
+        },
+        {
+          "tau": 0.97,
+          "ndcg": 0.6422441326731098,
+          "recall": 0.9571,
+          "dup_occ": 0.02266666666666667,
+          "size": 5272,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 1,
+          "removed": 1984,
+          "near_dups_removed": 1984,
+          "originals_removed": 0,
+          "precision": 1.0
+        },
+        {
+          "tau": 0.99,
+          "ndcg": 0.6311269677740936,
+          "recall": 0.7665,
+          "dup_occ": 0.084,
+          "size": 5667,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 2,
+          "removed": 1589,
+          "near_dups_removed": 1589,
+          "originals_removed": 0,
+          "precision": 1.0
+        }
+      ],
+      "theta_sweep": [
+        {
+          "theta": 0,
+          "ndcg": 0.6442935611147093,
+          "recall": 0.7833333333333333,
+          "size": 5210,
+          "removed": 2046
+        },
+        {
+          "theta": 10,
+          "ndcg": 0.6442935611147093,
+          "recall": 0.7833333333333333,
+          "size": 5210,
+          "removed": 2046
+        },
+        {
+          "theta": 20,
+          "ndcg": 0.6442935611147093,
+          "recall": 0.7833333333333333,
+          "size": 5210,
+          "removed": 2046
+        },
+        {
+          "theta": 30,
+          "ndcg": 0.6442935611147093,
+          "recall": 0.7833333333333333,
+          "size": 5210,
+          "removed": 2046
+        },
+        {
+          "theta": 50,
+          "ndcg": 0.6442935611147093,
+          "recall": 0.7833333333333333,
+          "size": 5206,
+          "removed": 2050
+        }
+      ],
+      "significance_vs_ungated_ndcg": {
+        "CORGI": {
+          "mean_diff": 0.0664,
+          "ci95": [
+            0.0528,
+            0.0804
+          ],
+          "wilcoxon_p": 3.0438309532124083e-19
+        },
+        "exact-dedup": {
+          "mean_diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "wilcoxon_p": 1.0
+        },
+        "minhash-0.8": {
+          "mean_diff": 0.0633,
+          "ci95": [
+            0.0495,
+            0.0777
+          ],
+          "wilcoxon_p": 8.037680726103782e-18
+        },
+        "semdedup-0.95": {
+          "mean_diff": 0.0663,
+          "ci95": [
+            0.0527,
+            0.0803
+          ],
+          "wilcoxon_p": 3.0438309532124083e-19
+        },
+        "random-prune (matched size)": {
+          "mean_diff": -0.1477,
+          "ci95": [
+            -0.1869,
+            -0.1105
+          ],
+          "wilcoxon_p": 2.3803315259840697e-11
+        },
+        "clean": {
+          "mean_diff": 0.0672,
+          "ci95": [
+            0.0535,
+            0.0813
+          ],
+          "wilcoxon_p": 3.0438309532124083e-19
+        },
+        "CORGI_vs_clean": {
+          "mean_diff": -0.0008,
+          "ci95": [
+            -0.0017,
+            -0.0001
+          ],
+          "wilcoxon_p": 0.043114446783075355
+        },
+        "CORGI_vs_minhash": {
+          "mean_diff": 0.0031,
+          "ci95": [
+            0.0002,
+            0.0066
+          ],
+          "wilcoxon_p": 0.07630157154752731
+        },
+        "CORGI_vs_semdedup": {
+          "mean_diff": 0.0001,
+          "ci95": [
+            0.0,
+            0.0002
+          ],
+          "wilcoxon_p": 0.31731050786291415
+        }
+      }
+    },
+    {
+      "seed": 3,
+      "M": 7256,
+      "timing": {
+        "similarity_matrix_s": 0.48,
+        "exact_dedup_s": 0.49,
+        "minhash_s": 2.6,
+        "semdedup_s": 1.88,
+        "corgi_gate_s": 0.04
+      },
+      "regimes": {
+        "clean": {
+          "ndcg": 0.6451,
+          "recall": 0.7833,
+          "dup_occ": 0.0,
+          "size": 5183
+        },
+        "ungated": {
+          "ndcg": 0.5696,
+          "recall": 0.7538,
+          "dup_occ": 0.2847,
+          "size": 7256
+        },
+        "exact-dedup": {
+          "ndcg": 0.5696,
+          "recall": 0.7538,
+          "dup_occ": 0.2847,
+          "size": 7256
+        },
+        "minhash-0.8": {
+          "ndcg": 0.636,
+          "recall": 0.7777,
+          "dup_occ": 0.0333,
+          "size": 5366
+        },
+        "semdedup-0.95": {
+          "ndcg": 0.644,
+          "recall": 0.7817,
+          "dup_occ": 0.0057,
+          "size": 5219
+        },
+        "CORGI": {
+          "ndcg": 0.644,
+          "recall": 0.7817,
+          "dup_occ": 0.004,
+          "size": 5204
+        },
+        "random-prune (matched size)": {
+          "ndcg": 0.4494,
+          "recall": 0.5539,
+          "dup_occ": 0.3,
+          "size": 5204
+        }
+      },
+      "removal_quality": {
+        "exact-dedup": {
+          "removed": 0,
+          "near_dups_removed": 0,
+          "originals_removed": 0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "minhash-0.8": {
+          "removed": 1890,
+          "near_dups_removed": 1890,
+          "originals_removed": 0,
+          "precision": 1.0,
+          "recall": 0.9117
+        },
+        "semdedup-0.95": {
+          "removed": 2037,
+          "near_dups_removed": 2037,
+          "originals_removed": 0,
+          "precision": 1.0,
+          "recall": 0.9826
+        },
+        "CORGI": {
+          "removed": 2052,
+          "near_dups_removed": 2052,
+          "originals_removed": 0,
+          "precision": 1.0,
+          "recall": 0.9899
+        }
+      },
+      "tau_sweep": [
+        {
+          "tau": 0.85,
+          "ndcg": 0.6394597790930862,
+          "recall": 0.999,
+          "dup_occ": 0.0,
+          "size": 5122,
+          "queries_with_quarantined_relevant_doc": 8,
+          "queries_recall_drop_vs_clean": 8,
+          "removed": 2134,
+          "near_dups_removed": 2071,
+          "originals_removed": 63,
+          "precision": 0.9705
+        },
+        {
+          "tau": 0.9,
+          "ndcg": 0.6463714478221647,
+          "recall": 0.9981,
+          "dup_occ": 0.0,
+          "size": 5183,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 0,
+          "removed": 2073,
+          "near_dups_removed": 2069,
+          "originals_removed": 4,
+          "precision": 0.9981
+        },
+        {
+          "tau": 0.93,
+          "ndcg": 0.6450816521455776,
+          "recall": 0.9971,
+          "dup_occ": 0.0003333333333333334,
+          "size": 5189,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 0,
+          "removed": 2067,
+          "near_dups_removed": 2067,
+          "originals_removed": 0,
+          "precision": 1.0
+        },
+        {
+          "tau": 0.95,
+          "ndcg": 0.6440245188649911,
+          "recall": 0.9899,
+          "dup_occ": 0.004000000000000001,
+          "size": 5204,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 1,
+          "removed": 2052,
+          "near_dups_removed": 2052,
+          "originals_removed": 0,
+          "precision": 1.0
+        },
+        {
+          "tau": 0.97,
+          "ndcg": 0.6403436658237829,
+          "recall": 0.9561,
+          "dup_occ": 0.020333333333333335,
+          "size": 5274,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 2,
+          "removed": 1982,
+          "near_dups_removed": 1982,
+          "originals_removed": 0,
+          "precision": 1.0
+        },
+        {
+          "tau": 0.99,
+          "ndcg": 0.6286955008361614,
+          "recall": 0.7656,
+          "dup_occ": 0.08933333333333332,
+          "size": 5669,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 4,
+          "removed": 1587,
+          "near_dups_removed": 1587,
+          "originals_removed": 0,
+          "precision": 1.0
+        }
+      ],
+      "theta_sweep": [
+        {
+          "theta": 0,
+          "ndcg": 0.6440245188649911,
+          "recall": 0.7816666666666666,
+          "size": 5204,
+          "removed": 2052
+        },
+        {
+          "theta": 10,
+          "ndcg": 0.6440245188649911,
+          "recall": 0.7816666666666666,
+          "size": 5204,
+          "removed": 2052
+        },
+        {
+          "theta": 20,
+          "ndcg": 0.6440245188649911,
+          "recall": 0.7816666666666666,
+          "size": 5204,
+          "removed": 2052
+        },
+        {
+          "theta": 30,
+          "ndcg": 0.6440245188649911,
+          "recall": 0.7816666666666666,
+          "size": 5204,
+          "removed": 2052
+        },
+        {
+          "theta": 50,
+          "ndcg": 0.6440245188649911,
+          "recall": 0.7816666666666666,
+          "size": 5200,
+          "removed": 2056
+        }
+      ],
+      "significance_vs_ungated_ndcg": {
+        "CORGI": {
+          "mean_diff": 0.0744,
+          "ci95": [
+            0.0602,
+            0.0894
+          ],
+          "wilcoxon_p": 8.015432244962685e-20
+        },
+        "exact-dedup": {
+          "mean_diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "wilcoxon_p": 1.0
+        },
+        "minhash-0.8": {
+          "mean_diff": 0.0664,
+          "ci95": [
+            0.0523,
+            0.0813
+          ],
+          "wilcoxon_p": 2.021465744294828e-17
+        },
+        "semdedup-0.95": {
+          "mean_diff": 0.0744,
+          "ci95": [
+            0.0602,
+            0.0894
+          ],
+          "wilcoxon_p": 8.015432244962685e-20
+        },
+        "random-prune (matched size)": {
+          "mean_diff": -0.1203,
+          "ci95": [
+            -0.1573,
+            -0.0841
+          ],
+          "wilcoxon_p": 9.58814751701047e-09
+        },
+        "clean": {
+          "mean_diff": 0.0754,
+          "ci95": [
+            0.0613,
+            0.0904
+          ],
+          "wilcoxon_p": 5.532090603944216e-20
+        },
+        "CORGI_vs_clean": {
+          "mean_diff": -0.0011,
+          "ci95": [
+            -0.0026,
+            -0.0001
+          ],
+          "wilcoxon_p": 0.06788915486182899
+        },
+        "CORGI_vs_minhash": {
+          "mean_diff": 0.008,
+          "ci95": [
+            0.0032,
+            0.0138
+          ],
+          "wilcoxon_p": 0.0006967518393263982
+        },
+        "CORGI_vs_semdedup": {
+          "mean_diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "wilcoxon_p": 1.0
+        }
+      }
+    },
+    {
+      "seed": 4,
+      "M": 7256,
+      "timing": {
+        "similarity_matrix_s": 0.44,
+        "exact_dedup_s": 0.41,
+        "minhash_s": 2.43,
+        "semdedup_s": 1.81,
+        "corgi_gate_s": 0.03
+      },
+      "regimes": {
+        "clean": {
+          "ndcg": 0.6451,
+          "recall": 0.7833,
+          "dup_occ": 0.0,
+          "size": 5183
+        },
+        "ungated": {
+          "ndcg": 0.5821,
+          "recall": 0.7593,
+          "dup_occ": 0.2887,
+          "size": 7256
+        },
+        "exact-dedup": {
+          "ndcg": 0.5821,
+          "recall": 0.7593,
+          "dup_occ": 0.2887,
+          "size": 7256
+        },
+        "minhash-0.8": {
+          "ndcg": 0.6399,
+          "recall": 0.7817,
+          "dup_occ": 0.027,
+          "size": 5324
+        },
+        "semdedup-0.95": {
+          "ndcg": 0.6414,
+          "recall": 0.7783,
+          "dup_occ": 0.01,
+          "size": 5228
+        },
+        "CORGI": {
+          "ndcg": 0.6428,
+          "recall": 0.7817,
+          "dup_occ": 0.0067,
+          "size": 5217
+        },
+        "random-prune (matched size)": {
+          "ndcg": 0.4522,
+          "recall": 0.5614,
+          "dup_occ": 0.281,
+          "size": 5217
+        }
+      },
+      "removal_quality": {
+        "exact-dedup": {
+          "removed": 0,
+          "near_dups_removed": 0,
+          "originals_removed": 0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "minhash-0.8": {
+          "removed": 1932,
+          "near_dups_removed": 1932,
+          "originals_removed": 0,
+          "precision": 1.0,
+          "recall": 0.932
+        },
+        "semdedup-0.95": {
+          "removed": 2028,
+          "near_dups_removed": 2028,
+          "originals_removed": 0,
+          "precision": 1.0,
+          "recall": 0.9783
+        },
+        "CORGI": {
+          "removed": 2039,
+          "near_dups_removed": 2039,
+          "originals_removed": 0,
+          "precision": 1.0,
+          "recall": 0.9836
+        }
+      },
+      "tau_sweep": [
+        {
+          "tau": 0.85,
+          "ndcg": 0.6394597790930862,
+          "recall": 0.9981,
+          "dup_occ": 0.0,
+          "size": 5124,
+          "queries_with_quarantined_relevant_doc": 8,
+          "queries_recall_drop_vs_clean": 8,
+          "removed": 2132,
+          "near_dups_removed": 2069,
+          "originals_removed": 63,
+          "precision": 0.9705
+        },
+        {
+          "tau": 0.9,
+          "ndcg": 0.6463714478221647,
+          "recall": 0.9976,
+          "dup_occ": 0.0,
+          "size": 5184,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 0,
+          "removed": 2072,
+          "near_dups_removed": 2068,
+          "originals_removed": 4,
+          "precision": 0.9981
+        },
+        {
+          "tau": 0.93,
+          "ndcg": 0.6448505740058222,
+          "recall": 0.9961,
+          "dup_occ": 0.0010000000000000002,
+          "size": 5191,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 0,
+          "removed": 2065,
+          "near_dups_removed": 2065,
+          "originals_removed": 0,
+          "precision": 1.0
+        },
+        {
+          "tau": 0.95,
+          "ndcg": 0.6427705424230655,
+          "recall": 0.9836,
+          "dup_occ": 0.006666666666666667,
+          "size": 5217,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 1,
+          "removed": 2039,
+          "near_dups_removed": 2039,
+          "originals_removed": 0,
+          "precision": 1.0
+        },
+        {
+          "tau": 0.97,
+          "ndcg": 0.6407859936498674,
+          "recall": 0.9556,
+          "dup_occ": 0.021333333333333336,
+          "size": 5275,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 1,
+          "removed": 1981,
+          "near_dups_removed": 1981,
+          "originals_removed": 0,
+          "precision": 1.0
+        },
+        {
+          "tau": 0.99,
+          "ndcg": 0.6244859118368042,
+          "recall": 0.7554,
+          "dup_occ": 0.095,
+          "size": 5690,
+          "queries_with_quarantined_relevant_doc": 0,
+          "queries_recall_drop_vs_clean": 3,
+          "removed": 1566,
+          "near_dups_removed": 1566,
+          "originals_removed": 0,
+          "precision": 1.0
+        }
+      ],
+      "theta_sweep": [
+        {
+          "theta": 0,
+          "ndcg": 0.6427705424230655,
+          "recall": 0.7816666666666666,
+          "size": 5217,
+          "removed": 2039
+        },
+        {
+          "theta": 10,
+          "ndcg": 0.6427705424230655,
+          "recall": 0.7816666666666666,
+          "size": 5217,
+          "removed": 2039
+        },
+        {
+          "theta": 20,
+          "ndcg": 0.6427705424230655,
+          "recall": 0.7816666666666666,
+          "size": 5217,
+          "removed": 2039
+        },
+        {
+          "theta": 30,
+          "ndcg": 0.6427705424230655,
+          "recall": 0.7816666666666666,
+          "size": 5217,
+          "removed": 2039
+        },
+        {
+          "theta": 50,
+          "ndcg": 0.6427705424230655,
+          "recall": 0.7816666666666666,
+          "size": 5213,
+          "removed": 2043
+        }
+      ],
+      "significance_vs_ungated_ndcg": {
+        "CORGI": {
+          "mean_diff": 0.0606,
+          "ci95": [
+            0.0475,
+            0.0741
+          ],
+          "wilcoxon_p": 1.3417147619232757e-17
+        },
+        "exact-dedup": {
+          "mean_diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "wilcoxon_p": 1.0
+        },
+        "minhash-0.8": {
+          "mean_diff": 0.0577,
+          "ci95": [
+            0.0444,
+            0.0717
+          ],
+          "wilcoxon_p": 2.5912285039649604e-15
+        },
+        "semdedup-0.95": {
+          "mean_diff": 0.0593,
+          "ci95": [
+            0.0461,
+            0.0727
+          ],
+          "wilcoxon_p": 1.9511144038276398e-17
+        },
+        "random-prune (matched size)": {
+          "mean_diff": -0.1299,
+          "ci95": [
+            -0.1698,
+            -0.0909
+          ],
+          "wilcoxon_p": 1.1580203413320565e-08
+        },
+        "clean": {
+          "mean_diff": 0.0629,
+          "ci95": [
+            0.0498,
+            0.0765
+          ],
+          "wilcoxon_p": 4.3595070625915594e-18
+        },
+        "CORGI_vs_clean": {
+          "mean_diff": -0.0023,
+          "ci95": [
+            -0.0047,
+            -0.0005
+          ],
+          "wilcoxon_p": 0.011718685599768628
+        },
+        "CORGI_vs_minhash": {
+          "mean_diff": 0.0029,
+          "ci95": [
+            -0.0005,
+            0.0067
+          ],
+          "wilcoxon_p": 0.04550969566250458
+        },
+        "CORGI_vs_semdedup": {
+          "mean_diff": 0.0013,
+          "ci95": [
+            0.0,
+            0.0036
+          ],
+          "wilcoxon_p": 0.10880943004054568
+        }
+      }
+    }
+  ]
+}
